@@ -8,6 +8,7 @@ info.onCountdownEnd(function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     sprites.destroy(otherSprite, effects.ashes, 200)
+    scene.cameraShake(2, 200)
     music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.UntilDone)
     info.changeScoreBy(1)
 })
